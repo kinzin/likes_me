@@ -5,6 +5,8 @@ module PhotoSelect
     photos = graph.get_connection("me", "photos", {:limit => 40})
     populate_likes_and_tags!(photos, graph)
  
+    # TODO: refactor this into its own PORC that receives the photo hash
+    # FIXME: change this map! to plain old map - why?
     photos.map! do |photo| 
       {
         id: photo["id"],
