@@ -1,7 +1,10 @@
 class HomeController < ApplicationController 
   
+  # TODO: move this require directive where it belongs!
   require Rails.root.join('lib','photoselect')
 
+  # FIXME: extend instead? What's the difference?
+  # Should PhotoSelect just be a class instead of a module?
   include PhotoSelect
   
   def index
